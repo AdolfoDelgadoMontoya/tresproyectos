@@ -1,0 +1,7 @@
+{
+  "name": "tresproyectos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
