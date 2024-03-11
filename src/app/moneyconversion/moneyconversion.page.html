@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Money conversion
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="nav('/weatherforecast')">Forecast</ion-button>
+      <ion-button (click)="nav('/home')">Calculadora</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Money conversion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-grid [fixed]="true" class="ion-padding">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">Cantidad</ion-label>
+            <ion-input counter="true" [(ngModel)]="nenter" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-select label="Moneda a convertir" [(ngModel)]="enter" label-placement="floating">
+              <ion-select-option *ngFor="let pais of coversionoption" [value]="pais[0]">{{pais[1]}} ({{pais[0]}})</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-select label="Moneda de conversion" [(ngModel)]="exit" label-placement="floating">
+              <ion-select-option *ngFor="let pais of coversionoption" [value]="pais[0]">{{pais[1]}} ({{pais[0]}})</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="conversion()">Convertir</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="nexit">
+        <ion-col>
+          <ion-item>
+            {{nexit}}
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

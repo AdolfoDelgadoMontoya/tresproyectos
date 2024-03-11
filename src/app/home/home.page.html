@@ -1,20 +1,96 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Calculadora
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="nav('/weatherforecast')">Forecast</ion-button>
+      <ion-button (click)="nav('/moneyconversion')">Conversion</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Calculadora</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid [fixed]="true" class="ion-padding">
+      <ion-row>
+        <ion-col>{{operaciones}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="secondary" (click)="escribirop(' + ')">+</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="secondary" (click)="escribirop(' - ')">-</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="secondary" (click)="escribirop(' * ')">*</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="secondary" (click)="escribirop(' / ')">÷</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('9')">9</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('8')">8</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('7')">7</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('6')">6</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('5')">5</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('4')">4</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('3')">3</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('2')">2</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('1')">1</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('0')">0</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="escribirop('.')">.</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="success" (click)="result()">=</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="danger" (click)="removeAll()">C</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="danger" (click)="removeElement()">CE</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" color="warning" (click)="removeLastChar()">⌫</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

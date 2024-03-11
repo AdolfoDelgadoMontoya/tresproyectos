@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'moneyconversion',
+    loadChildren: () => import('./moneyconversion/moneyconversion.module').then( m => m.MoneyconversionPageModule)
+  },
+  {
+    path: 'weatherforecast',
+    loadChildren: () => import('./weatherforecast/weatherforecast.module').then( m => m.WeatherforecastPageModule)
+  },
 ];
 
 @NgModule({
