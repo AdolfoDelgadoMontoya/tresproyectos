@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
 
-  constructor(private redireccionamiento:RedireccionamientoService, private alertController:AlertController,) {}
+  constructor(private redireccionamiento:RedireccionamientoService, private alertController:AlertController) {}
 
   resultado:any;
   operaciones:string="";
